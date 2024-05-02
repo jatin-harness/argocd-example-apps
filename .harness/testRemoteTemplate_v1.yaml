@@ -1,0 +1,33 @@
+template:
+  name: testRemoteTemplate
+  identifier: testRemoteTemplate
+  versionLabel: v1
+  type: Pipeline
+  projectIdentifier: test
+  orgIdentifier: default
+  tags: {}
+  spec:
+    stages:
+      - stage:
+          name: stage1
+          identifier: stage1
+          description: ""
+          type: Custom
+          spec:
+            execution:
+              steps:
+                - step:
+                    type: ShellScript
+                    name: ShellScript_1
+                    identifier: ShellScript_1
+                    spec:
+                      shell: Bash
+                      executionTarget: {}
+                      source:
+                        type: Inline
+                        spec:
+                          script: echo "Remote template used in pipeline"
+                      environmentVariables: []
+                      outputVariables: []
+                    timeout: 10m
+          tags: {}
